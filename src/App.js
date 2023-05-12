@@ -1,6 +1,7 @@
+import React from 'react';
 import './App.css';
 import GlobalStyle from './GlobalStyles';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Home from './Pages/HomePage/Home';
 import Services from './Pages/Services/Services';
 import Products from './Pages/Products/Products';
@@ -11,17 +12,27 @@ import ScrollToTop from './Components/ScrollToTop';
 function App() {
   return (
     <Router>
-      <GlobalStyle />
-      <ScrollToTop />
-
-      <Navbar />
-      <Switch>
-      <Route path="/" exact Component={Home} />
-      <Route path="/#services" exact Component={Services} />
-      <Route path="/#products" exact Component={Products} />
-      <Route path="/#sign-up" exact Component={SignUp} />
-      </Switch> 
-      <Footer />  
+      
+      <GlobalStyle/>
+      
+      <ScrollToTop/>
+      
+      <Navbar/>
+      
+      <Link>
+    
+        <Route path="/" exact Component={Home}/>
+    
+        <Route path="/#services" exact Component={Services}/>
+    
+        <Route path="/#products" exact Component={Products}/>
+    
+        <Route path="/#sign-up" exact Component={SignUp}/>
+    
+      </Link> 
+      
+      <Footer/>  
+    
     </Router>
   );
 }
